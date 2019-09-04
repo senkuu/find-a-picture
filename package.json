@@ -1,0 +1,8 @@
+{
+  "name": "find-a-picture",
+  "version": "1.0.0",
+  "description": "Find a picture on Unsplash, pixabay and more, in one place",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Enzo Do rosario"
+}
