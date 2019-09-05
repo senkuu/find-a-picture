@@ -1,0 +1,32 @@
+.pics {
+  margin-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pic {
+  margin-top: 20px;
+  width: 100%;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .pics {
+    justify-content: space-between;
+  }
+
+  .pic {
+    width: 40%;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .pics {
+    justify-content: space-between;
+  }
+
+  .pic {
+    width: 30%;
+  }
+}
