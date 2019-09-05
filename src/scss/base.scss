@@ -1,13 +1,6 @@
 html {
-  background: linear-gradient(180deg, #232323, #44434e);
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
-input {
-  color: #f1f1f1;
+  background: $color-background;
+  font-family: $font-primary;
 }
 
 .pic {

@@ -1,1 +1,8 @@
-@import "./scss/base.scss"
+// import fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+@import "./scss/variables.scss";
+@import "./scss/base.scss";
+
+// import components
+@import "./scss/input.scss";
