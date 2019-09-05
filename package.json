@@ -25,8 +25,5 @@
     "start": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
-  },
-  "dependencies": {
-    "unsplash-js": "^5.0.0"
   }
 }

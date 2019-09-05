@@ -1,27 +1,23 @@
 // import styles
 import "./style.scss";
 
-// import javascript
-// import Unsplash from "unsplash-js";
+// code
+const cred = {
+  APP_ID: "799e6fdc1bc36296d924b9094bc41a87fe727e14e7b52c014caf8193571c5c6c",
+  SECRET_KEY: "083a469649f1f0c62aabf21c739928a3801d89fa40d001e36b6429709f2c2cdc"
+};
 
-// // code
-// const unsplash = new Unsplash({
-//   applicationId:
-//     "7986c97eef88f3004ac3f75f9ce2209ac31e470b936cfcf84d757a1b28acf1f9",
-//   secret: "2086a5b65478d9465ee086e6f9333c4b079ce3413b7d09d009e6ec38d21fbf34"
-// });
+const searchBox = document.getElementById("search-input");
 
-// const searchBox = document.getElementById("search");
+searchBox.addEventListener("change", e => {
+  console.log(e.target.value);
+});
 
-// searchBox.addEventListener("change", e => {
-//   console.log(e.target.value);
-// });
-// const img = document.getElementById("test");
+const img = document.getElementById("pic-test");
 
-// unsplash.photos
-//   .getRandomPhoto()
-//   .then(Unsplash.toJson)
-//   .then(json => {
-//     console.log(json.url);
-//     img.src = json.url;
-//   });
+fetch("https://api.unsplash.com/photos/random/?client_id=" + cred.APP_ID)
+  .then(res => res.json())
+  .then(data => {
+    img.src = data.urls.small;
+  })
+  .catch(e => console.log(e));
