@@ -66,7 +66,7 @@ searchBox.addEventListener("change", e => {
       data.photos.map(pic => {
         let newImg = document.createElement("img");
         newImg.className = "pic";
-        newImg.src = pic.src.small;
+        newImg.src = pic.src.medium;
         gallery.appendChild(newImg);
       });
     });
