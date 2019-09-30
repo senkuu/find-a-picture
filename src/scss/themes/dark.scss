@@ -1,6 +1,10 @@
 .dark {
   background-color: $color-background-dark;
 
+  p {
+    color: $color-primary-dark;
+  }
+
   .fa {
     color: $color-primary-dark;
   }
