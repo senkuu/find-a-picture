@@ -12,12 +12,22 @@ const cred = {
 
 const searchBox = document.getElementById("search-input");
 const gallery = document.getElementById("gallery");
+const themeChanger = document.getElementById("theme-changer");
 
 const pexels_header = new Headers();
 
 let currentPage = 0;
 
 pexels_header.append("Authorization", cred.PEXELS_API_KEY);
+
+themeChanger.addEventListener("click", e => {
+  // document.getElementsByClassName("light")[0].classList.toggle("dark");
+  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
+
+  themeChanger.classList.toggle("fa-moon-o");
+  themeChanger.classList.toggle("fa-sun-o");
+});
 
 searchBox.addEventListener("change", e => {
   gallery.innerHTML = "";

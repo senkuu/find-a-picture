@@ -5,8 +5,6 @@
 .form-input {
   background: none;
   border: none;
-  border-bottom: 2px solid $color-primary;
-  color: $color-form-input;
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 16px;
@@ -14,7 +12,6 @@
 }
 
 .form-label {
-  color: $color-primary;
   font-size: 16px;
   padding-top: 5px;
   padding-bottom: 5px;

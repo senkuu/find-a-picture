@@ -1,0 +1,18 @@
+.light {
+  background-color: $color-background-light;
+
+  .fa {
+    color: $color-primary-light;
+  }
+
+  .form-control {
+    .form-input {
+      border-bottom: 2px solid $color-primary-light;
+      color: $color-form-input-light;
+    }
+
+    .form-label {
+      color: $color-primary-light;
+    }
+  }
+}
