@@ -21,7 +21,6 @@ let currentPage = 0;
 pexels_header.append("Authorization", cred.PEXELS_API_KEY);
 
 themeChanger.addEventListener("click", e => {
-  // document.getElementsByClassName("light")[0].classList.toggle("dark");
   document.body.classList.toggle("light");
   document.body.classList.toggle("dark");
 
