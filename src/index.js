@@ -1,6 +1,12 @@
 // import styles
 import "./style.scss";
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js");
+  });
+}
+
 // code
 const cred = {
   PIXABAY_APP_ID: "13537889-7d005d52a7e2e03e6b5e31c48",

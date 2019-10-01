@@ -1,4 +1,2 @@
 node_modules/
-dist/index.html
-dist/main.js
-dist/offline.html
+dist/

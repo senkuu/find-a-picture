@@ -1,4 +1,6 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WorkboxPlugin = require("workbox-webpack-plugin");
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 
 module.exports = {
   module: {
@@ -39,6 +41,27 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/offline.html",
       filename: "./offline.html"
+    }),
+    new WorkboxPlugin.InjectManifest({
+      swSrc: "./src/service-worker.js",
+      swDest: "service-worker.js"
+    }),
+    new WebpackPwaManifest({
+      name: "Find A Picture",
+      short_name: "FAP",
+      description:
+        "Find picture on Unsplash, Pixabay and more in the same place !",
+      icons: [
+        {
+          src: "src/assets/logo512.png",
+          sizes: [96, 128, 192, 256, 384, 512],
+          type: "image/png"
+        }
+      ],
+      start_url: "/index.html",
+      display: "standalone",
+      background_color: "#121212",
+      orientation: "portrait-primary"
     }),
     require("autoprefixer")
   ]
