@@ -26,6 +26,6 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "dev": "rm -rf dist && webpack --mode development",
-    "build": "rm -rf dist/ && webpack --mode production"
+    "build": "webpack --mode production"
   }
 }
