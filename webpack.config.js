@@ -42,10 +42,6 @@ module.exports = {
       template: "./src/offline.html",
       filename: "./offline.html"
     }),
-    new WorkboxPlugin.InjectManifest({
-      swSrc: "./src/service-worker.js",
-      swDest: "service-worker.js"
-    }),
     new WebpackPwaManifest({
       name: "Find A Picture",
       short_name: "FAP",
@@ -61,7 +57,14 @@ module.exports = {
       start_url: "/index.html",
       display: "standalone",
       background_color: "#121212",
-      orientation: "portrait-primary"
+      orientation: "portrait-primary",
+      fingerprints: true,
+      inject: true
+    }),
+    new WorkboxPlugin.GenerateSW({
+      swDest: "service-worker.js",
+      clientsClaim: true,
+      skipWaiting: true
     }),
     require("autoprefixer")
   ]
