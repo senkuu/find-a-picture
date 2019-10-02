@@ -8,5 +8,5 @@ workbox.routing.registerRoute(
   })
 );
 
-workbox.routing.registerRoute(/\.js$/, new workbox.strategies.NetworkFirst());
-workbox.routing.registerRoute(/\.html$/);
+// workbox.routing.registerRoute(/\.js$/);
+// workbox.routing.registerRoute(/\.html$/);
