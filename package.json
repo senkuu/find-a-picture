@@ -28,6 +28,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest --coverage"
   }
 }

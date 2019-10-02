@@ -1,6 +1,9 @@
 // import styles
 import "./style.scss";
 
+// import js
+import themeChanger from "./js/themeChanger";
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("./service-worker.js");
@@ -18,7 +21,7 @@ const cred = {
 
 const searchBox = document.getElementById("search-input");
 const gallery = document.getElementById("gallery");
-const themeChanger = document.getElementById("theme-changer");
+const themeChangerIcon = document.getElementById("theme-changer");
 
 const pexels_header = new Headers();
 
@@ -26,12 +29,8 @@ let currentPage = 0;
 
 pexels_header.append("Authorization", cred.PEXELS_API_KEY);
 
-themeChanger.addEventListener("click", e => {
-  document.body.classList.toggle("light");
-  document.body.classList.toggle("dark");
-
-  themeChanger.classList.toggle("fa-moon-o");
-  themeChanger.classList.toggle("fa-sun-o");
+themeChangerIcon.addEventListener("click", e => {
+  themeChanger(themeChangerIcon);
 });
 
 searchBox.addEventListener("change", e => {
