@@ -7,6 +7,3 @@ workbox.routing.registerRoute(
     cacheName: "font-awesome-stylesheets"
   })
 );
-
-// workbox.routing.registerRoute(/\.js$/);
-// workbox.routing.registerRoute(/\.html$/);
