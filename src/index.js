@@ -3,6 +3,7 @@ import "./style.scss";
 
 // import js
 import themeChanger from "./js/themeChanger";
+import createImages from "./js/createImages";
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -41,20 +42,19 @@ searchBox.addEventListener("change", e => {
       cred.PIXABAY_APP_ID +
       "&q=" +
       e.target.value +
-      "&page=1&per_page=9"
+      "&page=1&per_page=5"
   )
     .then(res => res.json())
     .then(data => {
+      const column = gallery.createElement("div");
+      column.className = "column";
       data.hits.map(pic => {
-        let newImg = document.createElement("img");
-        newImg.className = "pic";
-        newImg.src = pic.webformatURL;
-        gallery.appendChild(newImg);
+        createImages(pic.webformatURL, gallery);
       });
     });
 
   fetch(
-    "https://api.unsplash.com/photos/search?page=1&per_page=9&query=" +
+    "https://api.unsplash.com/photos/search?page=1&per_page=5&query=" +
       e.target.value +
       "&client_id=" +
       cred.UNSPLASH_APP_ID
@@ -62,17 +62,14 @@ searchBox.addEventListener("change", e => {
     .then(res => res.json())
     .then(data => {
       data.map(pic => {
-        let newImg = document.createElement("img");
-        newImg.className = "pic";
-        newImg.src = pic.urls.small;
-        gallery.appendChild(newImg);
+        createImages(pic.urls.small, gallery);
       });
     });
 
   fetch(
     "https://api.pexels.com/v1/search?query=" +
       e.target.value +
-      "&per_page=9&page=1",
+      "&per_page=5&page=1",
     {
       method: "GET",
       headers: pexels_header
@@ -81,10 +78,7 @@ searchBox.addEventListener("change", e => {
     .then(res => res.json())
     .then(data => {
       data.photos.map(pic => {
-        let newImg = document.createElement("img");
-        newImg.className = "pic";
-        newImg.src = pic.src.medium;
-        gallery.appendChild(newImg);
+        createImages(pic.src.medium, gallery);
       });
     });
 });
@@ -102,22 +96,19 @@ window.onscroll = e => {
         searchBox.value +
         "&page=" +
         currentPage +
-        "&per_page=3"
+        "&per_page=5"
     )
       .then(res => res.json())
       .then(data => {
         data.hits.map(pic => {
-          let newImg = document.createElement("img");
-          newImg.className = "pic";
-          newImg.src = pic.webformatURL;
-          gallery.appendChild(newImg);
+          createImages(pic.webformatURL, gallery);
         });
       });
 
     fetch(
       "https://api.unsplash.com/photos/search?page=" +
         currentPage +
-        "&per_page=3&query=" +
+        "&per_page=5&query=" +
         searchBox.value +
         "&client_id=" +
         cred.UNSPLASH_APP_ID
@@ -125,17 +116,14 @@ window.onscroll = e => {
       .then(res => res.json())
       .then(data => {
         data.map(pic => {
-          let newImg = document.createElement("img");
-          newImg.className = "pic";
-          newImg.src = pic.urls.small;
-          gallery.appendChild(newImg);
+          createImages(pic.urls.small, gallery);
         });
       });
 
     fetch(
       "https://api.pexels.com/v1/search?query=" +
         searchBox.value +
-        "&per_page=3&page=" +
+        "&per_page=5&page=" +
         currentPage +
         "",
       {
@@ -146,10 +134,7 @@ window.onscroll = e => {
       .then(res => res.json())
       .then(data => {
         data.photos.map(pic => {
-          let newImg = document.createElement("img");
-          newImg.className = "pic";
-          newImg.src = pic.src.medium;
-          gallery.appendChild(newImg);
+          createImages(pic.src.medium, gallery);
         });
       });
   }
