@@ -3,7 +3,7 @@ import "./style.scss";
 
 // import js
 import themeChanger from "./js/themeChanger";
-import createImages from "./js/createImages";
+import createImage from "./js/createImage";
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -49,7 +49,7 @@ searchBox.addEventListener("change", e => {
       const column = document.createElement("div");
       column.className = "column";
       data.hits.map(pic => {
-        createImages(pic.webformatURL, column);
+        createImage(pic.webformatURL, column);
       });
       gallery.appendChild(column);
     });
@@ -65,7 +65,7 @@ searchBox.addEventListener("change", e => {
       const column = document.createElement("div");
       column.className = "column";
       data.map(pic => {
-        createImages(pic.urls.small, column);
+        createImage(pic.urls.small, column);
       });
       gallery.appendChild(column);
     });
@@ -84,7 +84,7 @@ searchBox.addEventListener("change", e => {
       const column = document.createElement("div");
       column.className = "column";
       data.photos.map(pic => {
-        createImages(pic.src.medium, column);
+        createImage(pic.src.medium, column);
       });
       gallery.appendChild(column);
     });
@@ -110,7 +110,7 @@ window.onscroll = e => {
         const column = document.createElement("div");
         column.className = "column";
         data.hits.map(pic => {
-          createImages(pic.webformatURL, column);
+          createImage(pic.webformatURL, column);
         });
         gallery.appendChild(column);
       });
@@ -128,7 +128,7 @@ window.onscroll = e => {
         const column = document.createElement("div");
         column.className = "column";
         data.map(pic => {
-          createImages(pic.urls.small, column);
+          createImage(pic.urls.small, column);
         });
         gallery.appendChild(column);
       });
@@ -149,7 +149,7 @@ window.onscroll = e => {
         const column = document.createElement("div");
         column.className = "column";
         data.photos.map(pic => {
-          createImages(pic.src.medium, column);
+          createImage(pic.src.medium, column);
         });
         gallery.appendChild(column);
       });
