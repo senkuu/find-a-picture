@@ -1,3 +1,5 @@
+importScripts("precache-manifest.99d899613bc01377c45bfe977a69c2bc.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+
 workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
 // Cache font-awesome stylesheets with a stale while revalidate strategy.
@@ -7,3 +9,4 @@ workbox.routing.registerRoute(
     cacheName: "font-awesome-stylesheets"
   })
 );
+
