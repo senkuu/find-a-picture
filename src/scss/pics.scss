@@ -2,32 +2,32 @@
   margin-top: 10px;
 
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 100%;
+  max-width: 100%;
+  padding: 0 4px;
 }
 
 .pic {
-  margin-top: 20px;
+  margin-top: 8px;
+  vertical-align: middle;
   width: 100%;
 }
 
-@media (min-width: $breakpoint-tablet) {
-  .pics {
-    justify-content: space-between;
-  }
-
-  .pic {
-    width: 40%;
+@media screen and (min-width: $breakpoint-tablet) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
   }
 }
 
-@media (min-width: $breakpoint-desktop) {
-  .pics {
-    justify-content: space-between;
-  }
-
-  .pic {
-    width: 30%;
-    max-height: 800px;
+@media screen and (min-width: $breakpoint-desktop) {
+  .column {
+    flex: 25%;
+    max-width: 25%;
   }
 }

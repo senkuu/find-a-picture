@@ -46,11 +46,12 @@ searchBox.addEventListener("change", e => {
   )
     .then(res => res.json())
     .then(data => {
-      const column = gallery.createElement("div");
+      const column = document.createElement("div");
       column.className = "column";
       data.hits.map(pic => {
-        createImages(pic.webformatURL, gallery);
+        createImages(pic.webformatURL, column);
       });
+      gallery.appendChild(column);
     });
 
   fetch(
@@ -61,9 +62,12 @@ searchBox.addEventListener("change", e => {
   )
     .then(res => res.json())
     .then(data => {
+      const column = document.createElement("div");
+      column.className = "column";
       data.map(pic => {
-        createImages(pic.urls.small, gallery);
+        createImages(pic.urls.small, column);
       });
+      gallery.appendChild(column);
     });
 
   fetch(
@@ -77,9 +81,12 @@ searchBox.addEventListener("change", e => {
   )
     .then(res => res.json())
     .then(data => {
+      const column = document.createElement("div");
+      column.className = "column";
       data.photos.map(pic => {
-        createImages(pic.src.medium, gallery);
+        createImages(pic.src.medium, column);
       });
+      gallery.appendChild(column);
     });
 });
 
@@ -100,9 +107,12 @@ window.onscroll = e => {
     )
       .then(res => res.json())
       .then(data => {
+        const column = document.createElement("div");
+        column.className = "column";
         data.hits.map(pic => {
-          createImages(pic.webformatURL, gallery);
+          createImages(pic.webformatURL, column);
         });
+        gallery.appendChild(column);
       });
 
     fetch(
@@ -115,9 +125,12 @@ window.onscroll = e => {
     )
       .then(res => res.json())
       .then(data => {
+        const column = document.createElement("div");
+        column.className = "column";
         data.map(pic => {
-          createImages(pic.urls.small, gallery);
+          createImages(pic.urls.small, column);
         });
+        gallery.appendChild(column);
       });
 
     fetch(
@@ -133,9 +146,12 @@ window.onscroll = e => {
     )
       .then(res => res.json())
       .then(data => {
+        const column = document.createElement("div");
+        column.className = "column";
         data.photos.map(pic => {
-          createImages(pic.src.medium, gallery);
+          createImages(pic.src.medium, column);
         });
+        gallery.appendChild(column);
       });
   }
 };
